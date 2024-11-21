@@ -24,7 +24,6 @@ export default function PageTwo({
 }) {
   useGlobalButtonHaptics(onButtonClick);
 
-
   const {
     register,
     handleSubmit,
@@ -32,67 +31,102 @@ export default function PageTwo({
   } = useForm({
     resolver: yupResolver(schemaTwo),
     defaultValues: {
-        legalStatus: "",
-        admissionDate: new Date(),
-        publishingAuthority: "",
-        localAuthority: "",
-        keyWorker: "",
-        lastLacDate: new Date(),
-        nextLacDate: new Date(),
-        dischargeDate: new Date(),
+      legalStatus: "",
+      admissionDate: new Date(),
+      publishingAuthority: "",
+      localAuthority: "",
+      keyWorker: "",
+      lastLacDate: new Date(),
+      nextLacDate: new Date(),
+      dischargeDate: new Date(),
     },
   });
 
-  const { updateFormData} = useFormContext();
-  
+  const { updateFormData } = useFormContext();
+
   const onSubmit = (data: any) => {
     updateFormData("careHistory", data);
-  }
+  };
   return (
-    <div>
+    <div className=" bg-whiteflex-1 flex-col gap-4 form-style">
       <h2>Care History</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          {...register("legalStatus")}
-          placeholder="Legal Status"
-        />
-        <p>{errors.legalStatus?.message}</p>
-        <input
-          {...register("admissionDate")}          
-          placeholder="Admission Date"
-        />
-        <p>{errors.admissionDate?.message}</p>
-        <input
-          {...register("publishingAuthority")}          
-          placeholder="Publishing Authority"
-        />
-        <p>{errors.publishingAuthority?.message}</p>
-        <input
-          {...register("localAuthority")}          
-          placeholder="Local Authority"
-        />
-        <p>{errors.localAuthority?.message}</p>
-        <input
-          {...register("keyWorker")}          
-          placeholder="Key Worker"
-        />
-        <p>{errors.keyWorker?.message}</p>
-        <input
-          {...register("lastLacDate")}          
-          placeholder="Last LAC Date"
-        />
-        <p>{errors.lastLacDate?.message}</p>
-        <input
-          {...register("nextLacDate")}          
-          placeholder="Next LAC Date"
-        />
-        <p>{errors.nextLacDate?.message}</p>
-        <input
-          {...register("dischargeDate")}          
-          placeholder="Discharge Date"
-        />
-        <p>{errors.dischargeDate?.message}</p>
-        <button type="submit">Submit</button>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-4 max-w-[15rem]"
+      >
+        <div>
+          <input
+            type="date"
+            {...register("legalStatus")}
+            placeholder="Legal Status"
+          />
+          <p>{errors.legalStatus?.message}</p>
+        </div>
+
+        <div>
+          <input
+            type="date"
+            {...register("admissionDate")}
+            placeholder="Admission Date"
+          />
+          <p>{errors.admissionDate?.message}</p>
+        </div>
+
+        <div>
+          <input
+            type="date"
+            {...register("publishingAuthority")}
+            placeholder="Publishing Authority"
+          />
+          <p>{errors.publishingAuthority?.message}</p>
+        </div>
+
+        <div>
+          <input
+            type="date"
+            {...register("localAuthority")}
+            placeholder="Local Authority"
+          />
+          <p>{errors.localAuthority?.message}</p>
+        </div>
+
+        <div>
+          <input
+            type="date"
+            {...register("keyWorker")}
+            placeholder="Key Worker"
+          />
+          <p>{errors.keyWorker?.message}</p>
+        </div>
+
+        <div>
+          <input
+            type="date"
+            {...register("lastLacDate")}
+            placeholder="Last LAC Date"
+          />
+          <p>{errors.lastLacDate?.message}</p>
+        </div>
+
+        <div>
+          <input
+            type="date"
+            {...register("nextLacDate")}
+            placeholder="Next LAC Date"
+          />
+          <p>{errors.nextLacDate?.message}</p>
+        </div>
+
+        <div>
+          <input
+            type="date"
+            {...register("dischargeDate")}
+            placeholder="Discharge Date"
+          />
+          <p>{errors.dischargeDate?.message}</p>
+        </div>
+        <button  type="submit">Continue</button>
+
       </form>
     </div>
   );

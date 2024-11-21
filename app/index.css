@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    
+    html {
+        font-family: "Inter", sans-serif;
+    }
+    .form-style{
+        padding-inline: 2rem;
+        padding-top: 1rem;
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0;
+            margin: 0;
+        }
+        input, select {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding-block: 2px;
+            width: 100%;
+        }
+
+        button[type="submit"]{
+            background-color: #5243f7;
+            border-radius: 0.2rem;
+            width: fit-content;
+            padding: 0.5rem;
+            padding-inline: 0.8rem;
+            color: white;
+            font-weight: 200;
+        }
+    }
+}

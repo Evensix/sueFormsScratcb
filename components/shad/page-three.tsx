@@ -48,30 +48,43 @@ export default function PageThree({
       }
 
     return (
-      <div className="mt-4 flex flex-col">
+      <div className="bg-white flex-1 flex-col gap-4 overflow-y-scroll form-style">
+
         <h2>Contact Details</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 max-w-[15rem]">
+
+          <div>
             <label htmlFor="previousAddress">Previous Address</label>
             <input id="previousAddress" type="text" {...register("previousAddress")}  />
             <p>{errors.previousAddress?.message}</p>
+          </div>
 
+          <div>
             <label htmlFor="homeAddress">Home Address</label>
             <input id="homeAddress" type="text" {...register("homeAddress")} />
             <p>{errors.homeAddress?.message}</p>
+          </div>
 
+          <div>
             <label htmlFor="homePhone">Home Phone</label>
             <input id="homePhone"  type="text" {...register("homePhone")} />
             <p>{errors.homePhone?.message}</p>
+          </div>
 
+          <div>
             <label htmlFor="cellPhone">Cell Phone</label>
             <input id="cellPhone" type="text" {...register("cellPhone")} placeholder="Cell Phone"/>
             <p>{errors.cellPhone?.message}</p>
+          </div>
 
+          <div>
             <label htmlFor="email">Email</label>
             <input id="email" type="text" {...register("email")}  placeholder="Email"/>
             <p>{errors.email?.message}</p>
+          </div>
 
-            <button type="submit">Submit</button>
+          <button  type="submit">Continue</button>
+
 
         </form>
       </div>
