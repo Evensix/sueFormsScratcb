@@ -3,7 +3,7 @@
 import { useFormContext } from "@/hooks/useFormProvider";
 import { schemaOne } from "@/util/validation/validation";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { useForm, FormProvider} from "react-hook-form";
 import { useGlobalButtonHaptics } from "../global-button-haptics";
 import { DropDownInput } from "../AddListInput";
 import { DateInput } from "../DateInput";
@@ -50,16 +50,16 @@ export default function PageOne({
     },
   });
 
-  const { updateFormData } = useFormContext();
+  // const { updateFormData } = useFormContext();
 
   const onSubmit = (data: any) => {
-    updateFormData("personalInfo", data);
+    // updateFormData("personalInfo", data);
   };
 
   return (
     <div className="bg-white flex-1 flex-col gap-4 overflow-y-scroll form-style">
       <h2>Personal Information</h2>
-
+      <FormProvider>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 max-w-[15rem]"
@@ -146,6 +146,7 @@ export default function PageOne({
 
         <button  type="submit">Continue</button>
       </form>
+      </FormProvider>
     </div>
   );
 }

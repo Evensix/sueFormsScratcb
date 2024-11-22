@@ -13,9 +13,9 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
   return (
     <FormProvider>
-      <View style={{flex: 1, backgroundColor:'white', padding: 10, paddingInline: 40, maxHeight: '5rem', borderBottomColor: 'black', borderBottomWidth: 1}}>
-        <h2> Add Child </h2>
-        <h1 style={{fontSize: 20, fontWeight: 'bold'}}> Chole Alster </h1>
+      <View style={{ backgroundColor:'white', padding: 10, paddingInline: 40, maxHeight: '5rem', borderBottomColor: 'black', borderBottomWidth: 1}}>
+        <Text> Add Child </Text>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}> Chole Alster </Text>
       </View>
 
         <Tabs
