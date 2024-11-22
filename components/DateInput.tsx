@@ -12,8 +12,8 @@ interface DropDownInputProps {
 export const DateInput = ({ label,  value }: DropDownInputProps) => {
 
     return (
-        <div className="flex flex-col relative w-full fixed">
-            <div className="flex flex-row w-fit gap-2">
+            <div 
+             className="flex flex-row w-fit gap-2">
                 <div>
                 <p>Day</p>
                 <input type="number" value={value.split("-")[2]} style={{width: "5rem"}} />
@@ -28,6 +28,5 @@ export const DateInput = ({ label,  value }: DropDownInputProps) => {
                 </div>
             </div>
             
-        </div>
     );
 };
